@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Vehicle {
     private String registrationNo;
     private String type;
@@ -48,4 +49,56 @@ public class VehicleRental {
             System.out.println("Different vehicles.");
         }
     }
+=======
+class Vehicle {
+    private String registrationNo;
+    private String type;
+    private double ratePerDay;
+
+
+    public Vehicle(String registrationNo, String type, double ratePerDay) {
+        this.registrationNo = registrationNo;
+        this.type = type;
+        this.ratePerDay = ratePerDay;
+    }
+
+    public String getRegistrationNo() {
+        return registrationNo;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getRatePerDay() {
+        return ratePerDay;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle: " + registrationNo +
+               ", Type: " + type +
+               ", Rate: $" + ratePerDay + "/day";
+    }
+}
+
+public class VehicleRental {
+    public static void main(String[] args) {
+
+        Vehicle v1 = new Vehicle("MH12AB1234", "Sedan", 1500);
+
+ 
+        System.out.println(v1);
+
+        Vehicle v2 = new Vehicle("MH12XY9876", "SUV", 2000);
+
+        System.out.println(v2);
+
+        if (v1.getRegistrationNo().equals(v2.getRegistrationNo())) {
+            System.out.println("Both vehicles are the same.");
+        } else {
+            System.out.println("Different vehicles.");
+        }
+    }
+>>>>>>> 6d63c2f52c06b2d053d3b67fb5bd230721991e48
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 interface Discount {
     double apply(double amount);}
 
@@ -24,4 +25,32 @@ public class Main {
         Payment p = new Payment();
         p.processTransaction(1000);
         p.processTransaction(-50);
+=======
+interface Discount {
+    double apply(double amount);}
+
+class Payment {
+    void processTransaction(double amount) {
+        class Validator {
+            boolean isValid(double amt) {
+                return amt > 0;
+            }}
+
+        Validator validator = new Validator();
+        if (!validator.isValid(amount)) {
+            System.out.println("Invalid payment amount.");
+            return;}
+        Discount discount = new Discount() {
+            public double apply(double amt) {
+                return amt * 0.9; // 10% discount
+            }};
+        double finalAmount = discount.apply(amount);
+        System.out.println("Payment processed. Final amount after discount: " + finalAmount);
+    }}
+public class Main {
+    public static void main(String[] args) {
+        Payment p = new Payment();
+        p.processTransaction(1000);
+        p.processTransaction(-50);
+>>>>>>> 6d63c2f52c06b2d053d3b67fb5bd230721991e48
     }}
